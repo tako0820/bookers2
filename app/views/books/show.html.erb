@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="row">
+    <%= render 'shared/userinfo', user: @user ,book: @book_new %>
+
+    <div class="col-md-8 offset-md-1">
+  		<h2>Book detail</h2>
+  		<table class="table">
+  		  <tbody>
+
+  		   <tr>
+          <td>
+            <%= link_to user_path(@user.id) do %>
+             <%= image_tag @user.get_profile_image(100,100) %>
+             <br>
+             <%= @user.name %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to book_path(@book.id) do %>
+            <span><%= @book.title %></span>
+            <% end %>
+          </td>
+          <td>
+            <span><%= @book.body %></span>
+          </td>
+          <% if @book.user == current_user %>
+          <td>
+            <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success edit_book_14949"%>
+          </td>
+          <td>
+           <%= link_to "Destory", book_path(@book.id), method: :delete ,data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger destroy_book_14949" %>
+          <% end %>
+          </td>
+         </tr>
+      　</tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+
