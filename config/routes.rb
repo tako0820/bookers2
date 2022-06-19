@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only:[:show, :edit, :index]
+  resources :users
   resources :books
 
 end
