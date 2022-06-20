@@ -29,10 +29,11 @@
             <%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-sm btn-success edit_book_14949"%>
           </td>
           <td>
-            <%= link_to "Destory", book_path(@book.id), method: :delete ,data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger destroy_book_14949" %>
-          <% end %>
+            <%= link_to "Destroy", book_path(@book.id), method: :delete ,data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger destroy_book_14949" %>
           </td>
+          <% end %>
          </tr>
+
       　</tbody>
       </table>
     </div>
